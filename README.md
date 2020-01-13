@@ -2,6 +2,8 @@
 
 is probably (c) somebody somewhere
 
+Does't work at all in Safari. Will try to figure out why later!
+
 ##### This project is part of The Odin Project Webdev 101 curriculum.
 
 ## Things and stuff

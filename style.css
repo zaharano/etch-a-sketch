@@ -1,25 +1,94 @@
 body {
-    background-color: #ccc;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
 #grid-container {
+    background-color: hsl(0, 0%, 90%);
     display: flex;
     flex-direction: column;
-    margin: 20px auto;
+    margin: auto;
     width: 800px;
     height: 600px;
     padding: 10px;
-    border: solid red;
-    border-width: 40px 80px 100px 80px;
-    border-radius: 20px;
     -webkit-box-shadow: inset 0px 0px 28px 0px rgba(0,0,0,0.44); 
     box-shadow: inset 0px 0px 28px 0px rgba(0,0,0,0.44);
-
-    
-    
 }
 
+#etch-a-sketch {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: red;
+    width: 800px;
+    padding: 40px 80px 0px 80px;
+    margin: 20px auto;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.44); 
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.44)
+}
+
+#control-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 820px;
+    margin: 30px auto;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: 300;
+    background-color: rgb(222, 222, 222);
+    border-radius: 10px;
+    color: gray;
+    margin-right: 1rem;
+    outline: none;
+    border: none;
+    -webkit-box-shadow: 0px 3px 0px 0px #7D6559; 
+    box-shadow: 0px 3px 0px 0px #7D6559;
+    transition: 100ms;
+}
+
+button.last {
+    margin-right: 0;
+}
+
+input {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 300;
+    background-color: rgb(222, 222, 222);
+    border-radius: 10px;
+    color: gray;
+    width: 4rem;
+    margin-right: 1rem;
+    outline: none;
+    border: none;
+}
+
+input:hover, input:focus, button:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+button:active {
+    -webkit-box-shadow: 0px 0px 0px 0px #7D6559; 
+    box-shadow: 0px 0px 0px 0px #7D6559;
+    transform: translateY(3px);
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-right: 1rem;
+}
 
 .row {
     display: flex;
@@ -36,3 +105,4 @@ body {
 .cell.black {
     background-color: rgb(80, 80, 80);
 }
+

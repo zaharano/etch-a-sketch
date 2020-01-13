@@ -3,7 +3,7 @@ const gridContainer = document.getElementById('grid-container');
 const grid = {
     // default options
     size: 64,
-    mode: 'black',
+    mode: 'scale',
     // builds the matrix of divs based on current size
     build() {
         for (let i = 0; i < this.size; i++) {
@@ -46,11 +46,21 @@ const grid = {
         } else if (this.mode === 'scale') {
             cell.style.opacity = 0.0;
             cell.classList.add('black');
-            cell.addEventListener('mouseover', function() {
+            cell.addEventListener('mouseover', async function() {
                 this.style.opacity = Number(this.style.opacity) + 0.1;
             })
             return cell;
+        } else if (this.mode === 'random') {
+            cell.addEventListener('mouseover', function() {
+                 this.style.backgroundColor = 
+                     `rgb(${grid.randRGBVal()}, ${grid.randRGBVal()}, ${grid.randRGBVal()})`;       
+            })
+            return cell;
         }
+    },
+
+    randRGBVal() {
+        return Math.floor(Math.random() * 256);
     },
 
     setMode(mode) {
@@ -95,6 +105,10 @@ const controls = {
         grid.setMode('scale');
         grid.reset();
     },
+    hitRandom() {
+        grid.setMode('random');
+        grid.reset();
+    }
 }
 
 grid.build();
